@@ -1,0 +1,17 @@
+Script to check whether the given argument is a file or directory.
+Create a file:
+nano check.sh
+
+
+Program:
+#!/bin/bash
+
+if [ -d "$1" ]
+then
+    echo "It is a directory"
+elif [ -f "$1" ]
+then
+    echo "It is a file"
+else
+    echo "File or directory does not exist"
+fi
