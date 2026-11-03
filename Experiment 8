@@ -1,0 +1,8 @@
+Observe Process Memory Map Using pmap
+
+Get its PID:
+PID=$(pgrep -n io)
+
+For detailed information:
+pmap -x $PID
+
