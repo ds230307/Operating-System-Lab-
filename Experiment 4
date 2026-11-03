@@ -1,0 +1,21 @@
+#!/bin/bash
+
+user=$1
+
+login=$(who | awk -v u="$user" '$1==u {print $3, $4; exit}')
+
+if [ -z "$login" ]
+then
+    echo "User is not currently logged in"
+else
+    start=$(date -d "$login" +%s)
+    now=$(date +%s)
+
+    seconds=$((now-start))
+
+    hours=$((seconds/3600))
+    minutes=$(((seconds%3600)/60))
+
+    echo "User: $user"
+    echo "Working time: $hours hours and $minutes minutes"
+fi
