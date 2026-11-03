@@ -1,0 +1,88 @@
+Input/output redirection
+echo "Hello Linux" > file.txt
+
+
+Creates a file and writes content into it.
+echo "Welcome" >> file.txt
+
+
+Appends content to the file.
+cat < file.txt
+
+
+Takes input from a file.
+ls > output.txt
+
+
+Redirects output into a file.
+ls nonexistent 2> error.txt
+
+
+Redirects error messages into a file.
+C. Pipe commands
+A pipe (|) sends the output of one command to another command.
+ls | wc -l
+
+
+Counts the number of listed entries.
+cat file.txt | sort
+
+
+Sorts the contents of a file.
+ps aux | grep bash
+
+
+Searches for Bash processes.
+D. Searching files
+find . -name "*.txt"
+
+
+grep "hello" file.txt
+
+
+grep -i "hello" file.txt
+
+
+E. Process management
+ps
+
+
+ps aux
+
+
+top
+
+
+jobs
+
+
+kill PID
+
+
+pgrep bash
+
+
+F. vi and nano editor commands
+Nano:
+nano file.txt
+
+
+- Ctrl + O: Save
+- Enter: Confirm filename
+- Ctrl + X: Exit
+- Ctrl + K: Cut line
+- Ctrl + U: Paste line
+Vi/Vim:
+vi file.txt
+
+
+- i: Insert mode
+- Esc: Exit insert mode
+- :w: Save
+- :q: Quit
+- :wq: Save and quit
+- :q!: Quit without saving
+- dd: Delete a line
+- yy: Copy a line
+- p: Paste
+
