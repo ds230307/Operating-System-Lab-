@@ -1,0 +1,24 @@
+CPU-Bound and I/O-Bound C Programs.
+
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+    clock_t start = clock();
+
+    volatile long long sum = 0;
+
+    while ((double)(clock() - start) / CLOCKS_PER_SEC < 20)
+    {
+        for (int i = 0; i < 100000; i++)
+        {
+            sum += i;
+        }
+    }
+
+    printf("CPU-bound program completed\n");
+    printf("Sum = %lld\n", sum);
+
+    return 0;
+}
