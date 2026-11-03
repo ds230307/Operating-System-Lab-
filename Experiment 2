@@ -1,0 +1,35 @@
+Display date on screen and redirect who output to a file in one line.
+Command:
+date; who > users.txt
+
+
+Explanation:
+- date displays the current date and time on the terminal.
+- who displays currently logged-in users.
+- > redirects the output of who into users.txt.
+To see the redirected output:
+cat users.txt
+
+
+Q2. Write a sed command to swap the first and second words in each line.
+Command:
+sed -E 's/^([^ ]+) +([^ ]+)/\2 \1/' input.txt
+
+
+Example input (input.txt):
+Hello World
+Operating System
+Linux Ubuntu
+
+
+Output:
+World Hello
+System Operating
+Ubuntu Linux
+
+
+To save the result in another file:
+sed -E 's/^([^ ]+) +([^ ]+)/\2 \1/' input.txt > output.txt
+
+
+
